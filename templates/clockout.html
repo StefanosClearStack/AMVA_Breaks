@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <style>
+        body {
+            background: #F6F7FA;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: white;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 27px;
+            padding: 2rem;
+            width: 100%;
+            max-width: 800px;
+            text-align: center;
+            position: relative;
+            height: 80vh; /* Adjust the height to take up most of the screen */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .logo {
+            margin: 0 auto;
+        }
+
+        .logo img {
+            width: 100%;
+            max-width: 316px;
+            height: auto;
+        }
+
+        .welcome-message {
+            color: #151515;
+            font-size: 32px;
+            font-weight: 700;
+            padding: 50px;
+        }
+
+        .circle {
+            background: #27507F;
+            border-radius: 50%;
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .break-button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 32px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .time-display {
+            color: black;
+            font-size: 32px;
+            font-weight: 400;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                height: auto;
+            }
+
+            .welcome-message {
+                font-size: 40px;
+            }
+
+            .circle {
+                width: 337px;
+                height: 337px;
+            }
+
+            .break-button {
+                font-size: 40px;
+            }
+
+            .time-display {
+                font-size: 40px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                height: auto;
+            }
+
+            .welcome-message {
+                font-size: 48px;
+            }
+
+            .circle {
+                width: 350px;
+                height: 350px;
+            }
+
+            .break-button {
+                font-size: 42px;
+            }
+
+            .time-display {
+                font-size: 48px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="AMVA_LOGO.png" alt="Logo">
+        </div>
+        <div class="time-display">7:50AM</div>
+        <div class="welcome-message">Welcome Back Stefanos</div>
+        <div class="circle">
+            <button class="break-button">Finish Break</button>
+        </div>
+    </div>
+</body>
+</html>

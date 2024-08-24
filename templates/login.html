@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            background: #F6F7FA;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: white;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 27px;
+            padding: 2rem;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .logo {
+            margin-bottom: 1rem;
+        }
+
+        .logo img {
+            width: 100%;
+            max-width: 316px;
+            height: auto;
+        }
+
+        .title {
+            color: #151515;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+
+        .form-field {
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+
+        .form-field input {
+            width: 300px;
+            padding: 12px 16px;
+            border: 1px solid #D9D9D9;
+            border-radius: 8px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .form-field input::placeholder {
+            color: #B3B3B3;
+        }
+
+        .submit-button {
+            width: 300px;
+            padding: 12px 0;
+            background: #27507F;
+            color: #FBFBFB;
+            font-size: 18px;
+            font-weight: 600;
+            border: none;
+            border-radius: 60px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .submit-button:hover {
+            background: #1d3e61;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                max-width: 500px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                max-width: 600px;
+            }
+
+            .title {
+                font-size: 32px;
+            }
+
+            .submit-button {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='AMVA_LOGO.png') }}" alt="Logo">
+        </div>
+        <div class="title">AMVA BREAK KIOSK</div>
+        <form method="POST">
+            {{ login_form.hidden_tag() }}
+            <div class="form-field">
+                {{ login_form.username.label }}
+                {{ login_form.username(size=32, class_="input-field") }}
+            </div>
+            <div class="form-field">
+                {{ login_form.password.label }}
+                {{ login_form.password(size=32, class_="input-field") }}
+            </div>
+            <div>
+                {{ login_form.submit(class_="submit-button") }}
+            </div>
+        </form>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            <ul class="flashes">
+            {% for category, message in messages %}
+              <li class="{{ category }}">{{ message }}</li>
+            {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+    </div>
+</body>
+</html>
